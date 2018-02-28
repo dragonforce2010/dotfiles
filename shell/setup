@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ "$(uname)" -eq "Darwin" ]]; then
+  greadlink -e . 2>&1 > /dev/null
+  if [[ $? -ne 0 ]]; then
+    brew install coreutils
+  fi
+  SRC=$(dirname $(greadlink -e $0))
+else
+  SRC=$(dirname $(readlink -e $0))
+fi
+
+ln -s "${SRC}/aliases" ~/.aliases
+echo "source ~/.aliases" >> ~/.bashrc
