@@ -2,7 +2,7 @@
 
 ## Installation
 
-```bash
+```sh
 git clone https://github.com/dragonforce2010/dotfiles .dotfiles
 ```
 
@@ -10,12 +10,12 @@ git clone https://github.com/dragonforce2010/dotfiles .dotfiles
 
 To set up vim:
 
-```bash
+```sh
 ~/.dotfiles/vim/setup
 ```
 
 To set up shell:
 
-```bash
+```sh
 ~/.dotfiles/shell/setup
 ```
