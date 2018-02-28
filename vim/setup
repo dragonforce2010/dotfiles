@@ -1,8 +1,7 @@
 #!/bin/bash
 
-
 if [[ "$(uname)" -eq "Darwin" ]]; then
-  greadlink 2>&1 /dev/null
+  greadlink -e . 2>&1 > /dev/null
   if [[ $? -ne 0 ]]; then
     brew install coreutils
   fi
@@ -10,7 +9,6 @@ if [[ "$(uname)" -eq "Darwin" ]]; then
 else
   SRC=$(dirname $(readlink -e $0))
 fi
-
 
 # vim-plug: Simple plugin manager to download directly from github instead of saving all our plugins locally
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
